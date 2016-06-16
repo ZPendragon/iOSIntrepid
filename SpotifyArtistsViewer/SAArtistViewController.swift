@@ -17,7 +17,6 @@ class SAArtistViewController: UIViewController {
     var url :String?
     var detailArtist: SAArtist?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = UIColor.blackColor()
@@ -34,7 +33,6 @@ class SAArtistViewController: UIViewController {
             let imgData = NSData(contentsOfURL: imgURL)
             else { return nil }
         return UIImage(data: imgData)
-        
     }
     
     private func configureView() {

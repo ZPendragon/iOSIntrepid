@@ -9,7 +9,7 @@
 import UIKit
 
 struct SAArtist {
- 
+    
     var name : String
     var image : String?
     var description: String?
@@ -19,5 +19,4 @@ struct SAArtist {
         self.image = image ?? "NoImageDefault"
         self.description = description ?? "This band is awesome!"
     }
-    
 }
