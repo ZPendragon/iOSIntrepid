@@ -15,6 +15,7 @@ class SASearchViewController: UITableViewController, UITextFieldDelegate {
     
     private var artists = [SAArtist]()
     private let requestManager = SARequestManager.sharedInstance
+    let cellType = "UITableViewCell?"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class SASearchViewController: UITableViewController, UITextFieldDelegate {
             print("Error fetching artists: \(error)")
         case .Success(let returnedArtists):
             print("Success!!!")
-            self.artists = returnedArtists
+            artists = returnedArtists
             self.tableView.reloadData()
         }
     }
@@ -47,7 +48,7 @@ class SASearchViewController: UITableViewController, UITextFieldDelegate {
     }
     
     override internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell?
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as cellType
         cell?.textLabel?.text = self.artists[indexPath.row].name
         return cell!
     }

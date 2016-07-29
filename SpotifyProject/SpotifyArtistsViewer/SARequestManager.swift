@@ -60,7 +60,6 @@ final class SARequestManager {
             }
         }
         task.resume()
-        
     }
     
     func fetchImage(images: [AnyObject]?) -> String?  {

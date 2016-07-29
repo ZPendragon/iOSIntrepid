@@ -1,0 +1,37 @@
+Contacts Notes
+
+    // TODO Delete this
+    // MARK: - ConfigureTextField
+    
+//    private func configureTextField() {
+//
+//        textField = UITextField(frame: CGRect(x: 0, y: 0, width: (navigationController?.navigationBar.frame.size.width)! - 100, height: 30))
+//        textField.placeholder = "Search Contacts"
+//        textField.textAlignment = .Center
+//        textField.keyboardType = .Default
+//        textField.clearButtonMode = .WhileEditing
+//        textField.borderStyle = .RoundedRect
+//        
+//        self.navigationItem.titleView = textField
+//    }
+
+
+
+TODO Right Bar button Add contact
+
+navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: Selector("addContact"))
+
+ // MARK: - Add Contact
+    @objc private func addContact(sender: UIBarButtonItem) {
+        print("Hello")
+    }
+]
+
+Table Headers, Sections, HeadSects and more:
+	http://www.appcoda.com/ios-programming-index-list-uitableview/
+
+Telephone Prompt:
+	https://www.raizlabs.com/dev/2014/04/getting-the-best-behavior-from-phone-call-requests-using-tel-in-an-ios-app/
+
+Search Controller:
+	https://www.raywenderlich.com/113772/uisearchcontroller-tutorial
