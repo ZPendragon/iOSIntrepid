@@ -16,9 +16,9 @@
 		F938A31A1D4B974B00EC743D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F938A3181D4B974B00EC743D /* LaunchScreen.storyboard */; };
 		F938A3251D4B974B00EC743D /* Spotify_ObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F938A3241D4B974B00EC743D /* Spotify_ObjCTests.m */; };
 		F938A3301D4B974B00EC743D /* Spotify_ObjCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F938A32F1D4B974B00EC743D /* Spotify_ObjCUITests.m */; };
-		F938A3421D4BEB8200EC743D /* SAArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = F938A3411D4BEB8200EC743D /* SAArtist.m */; };
 		F938A3441D4BEF8A00EC743D /* SARequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F938A3431D4BEF8A00EC743D /* SARequestManager.m */; };
 		F938A3461D4BF6AD00EC743D /* SAResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F938A3451D4BF6AD00EC743D /* SAResponse.m */; };
+		F9B48A921D4FDDF600FA150A /* SAArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = F938A3411D4BEB8200EC743D /* SAArtist.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -312,13 +312,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9B48A921D4FDDF600FA150A /* SAArtist.m in Sources */,
 				F938A3151D4B974B00EC743D /* Spotify_ObjC.xcdatamodeld in Sources */,
 				F938A3441D4BEF8A00EC743D /* SARequestManager.m in Sources */,
 				F938A30F1D4B974B00EC743D /* SASearchViewController.m in Sources */,
 				F938A30C1D4B974B00EC743D /* AppDelegate.m in Sources */,
 				F938A3091D4B974B00EC743D /* main.m in Sources */,
 				F938A3461D4BF6AD00EC743D /* SAResponse.m in Sources */,
-				F938A3421D4BEB8200EC743D /* SAArtist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,8 +461,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INFOPLIST_FILE = "Spotify-ObjC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "kzprojects.Spotify-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -472,8 +474,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INFOPLIST_FILE = "Spotify-ObjC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "kzprojects.Spotify-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

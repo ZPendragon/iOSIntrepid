@@ -17,6 +17,8 @@ typedef void (^Completion)(SAResponse *response);
 + (SARequestManager *) sharedInstance;
 + (id) allocWithZone:(struct _NSZone *)zone;
 - (void) singletonInit;
-- (void) getArtistsWithQuery:(NSString *)query completion:(Completion)completion;
+//- (void) getArtistsWithQuery:(NSString *)query completion:(Completion)completion;
+- (void) getArtistsWithQuery:(NSString *)query completion:(SEL)updateArtistsWithResult;
+- (NSString *) fetchImage:(NSArray *)images;
 
 @end

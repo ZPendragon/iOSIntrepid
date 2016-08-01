@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SAArtist 
+@interface SAArtist : NSObject
 
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *image;
-@property (nonatomic) NSString *description;
+@property (nonatomic) NSString *artistDescription;
 
 @end

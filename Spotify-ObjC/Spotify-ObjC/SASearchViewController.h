@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SAResponse.h"
+#import "SARequestManager.h"
 
 @interface SASearchViewController : UITableViewController <UITextFieldDelegate>
 
+- (void) updateFilteredArtistsWithResponse:(SAResponse *)result;
 - (void) setupVC;
 
 @end

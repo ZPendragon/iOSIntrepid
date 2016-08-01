@@ -36,11 +36,11 @@ static SARequestManager *sharedInstance = nil;
     return [SARequestManager sharedInstance];
 }
 
-- (void) getArtistsWithQuery:(NSString *)query completion:(Completion)completion {
+//- (void) getArtistsWithQuery:(NSString *)query completion:(Completion)completion {
+- (void) getArtistsWithQuery:(NSString *)query completion:(SEL)updateArtistsWithResult {
     NSMutableString *path = [NSMutableString stringWithFormat: @"https://api.spotify.com/v1/search?q=%@", query];
     NSString *parameters = @"&type=track,artist&market=US";
     [path appendString: parameters];
-    
     NSURL *url = [NSURL URLWithString: path];
     NSURLSessionDataTask *task = [session dataTaskWithURL: url
                                         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -48,22 +48,50 @@ static SARequestManager *sharedInstance = nil;
                                             NSLog(@"Getting Data");
                                             if (!data) {
                                                 *(result.response) = Failure;
+                                                result.error = error;
                                                 NSLog(@"Error: %@", [error localizedDescription]);
                                             } else {
-                                                NSLog(@"Returned Response: %@ \n", data);
-                                                *(result.response) = Success;
-                                                // TODO:
-                                                /*
-                                                 - parse data object with NSJSON
-                                                 - Build [SAArtist] from JSON object.
-                                                 - pass [SAArtist] to SAResponse.artists
-                                                 */
+                                                //NSLog(@"Returned Response: %@ \n", data);
+//                                                *(result.response) = Success;
+                                                NSError *jsonError = nil;
+                                                NSDictionary *jsonResult = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &jsonError];
+                                                NSMutableArray *returnedArtists;
+                                                
+                                                if ([jsonResult objectForKey:@"artists"]) {
+                                                    NSDictionary *artistResponse = [jsonResult objectForKey:@"artists"];
+                                                    NSLog(@"%@", artistResponse);
+                                                    NSArray *artists = [artistResponse objectForKey:@"items"];
+                                                    for (NSDictionary *artistEntry in artists) {
+                                                        NSArray *images = [artistEntry objectForKey:@"images"];
+                                                        
+                                                        SAArtist *artist = [[SAArtist alloc] init];
+                                                        artist.name = [artistEntry objectForKey:@"name"];
+                                                        artist.image = [self fetchImage:images];
+                                                        artist.artistDescription = @"This band is awesome!";
+                                                        [returnedArtists addObject:artist];
+                                                    }
+                                                }
+                                                result.artists = returnedArtists;
                                             }
                                             dispatch_sync(dispatch_get_main_queue(), ^{
-                                                completion(result);
+//                                                completion(result);
+                                                [self performSelector:updateArtistsWithResult withObject:result];
                                             });
                                         }];
+    [task resume];
 }
 
+- (NSString *) fetchImage:(NSArray *)images {
+    for (NSDictionary *image in images) {
+        NSNumber *height = [image objectForKey:@"height"];
+        NSNumber *width = [image objectForKey:@"width"];
+        
+        if (width == height) {
+            NSString *url = [image objectForKey:@"url"];
+            return url;
+        }
+    }
+    return nil;
+}
 
 @end
