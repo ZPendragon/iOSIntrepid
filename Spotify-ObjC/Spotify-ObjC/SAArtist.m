@@ -7,3 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
+@interface SAArtist
+
+@end
