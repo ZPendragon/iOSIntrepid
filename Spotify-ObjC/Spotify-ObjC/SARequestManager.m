@@ -54,5 +54,4 @@ static SARequestManager *sharedInstance = nil;
                                         }];
     [task resume];
 }
-
 @end

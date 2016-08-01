@@ -16,4 +16,5 @@
 
 + (NSArray *) configureWithJSON:(NSData *)responseData;
 + (NSString *) fetchImageURL:(NSArray *)images;
+
 @end
