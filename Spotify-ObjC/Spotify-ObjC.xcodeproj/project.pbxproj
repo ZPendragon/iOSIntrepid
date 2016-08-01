@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		F938A3091D4B974B00EC743D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F938A3081D4B974B00EC743D /* main.m */; };
 		F938A30C1D4B974B00EC743D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F938A30B1D4B974B00EC743D /* AppDelegate.m */; };
-		F938A30F1D4B974B00EC743D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F938A30E1D4B974B00EC743D /* ViewController.m */; };
+		F938A30F1D4B974B00EC743D /* SASearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F938A30E1D4B974B00EC743D /* SASearchViewController.m */; };
 		F938A3121D4B974B00EC743D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F938A3101D4B974B00EC743D /* Main.storyboard */; };
 		F938A3151D4B974B00EC743D /* Spotify_ObjC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F938A3131D4B974B00EC743D /* Spotify_ObjC.xcdatamodeld */; };
 		F938A3171D4B974B00EC743D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F938A3161D4B974B00EC743D /* Assets.xcassets */; };
 		F938A31A1D4B974B00EC743D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F938A3181D4B974B00EC743D /* LaunchScreen.storyboard */; };
 		F938A3251D4B974B00EC743D /* Spotify_ObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F938A3241D4B974B00EC743D /* Spotify_ObjCTests.m */; };
 		F938A3301D4B974B00EC743D /* Spotify_ObjCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F938A32F1D4B974B00EC743D /* Spotify_ObjCUITests.m */; };
+		F938A3421D4BEB8200EC743D /* SAArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = F938A3411D4BEB8200EC743D /* SAArtist.m */; };
+		F938A3441D4BEF8A00EC743D /* SARequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F938A3431D4BEF8A00EC743D /* SARequestManager.m */; };
+		F938A3461D4BF6AD00EC743D /* SAResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F938A3451D4BF6AD00EC743D /* SAResponse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +43,8 @@
 		F938A3081D4B974B00EC743D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F938A30A1D4B974B00EC743D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F938A30B1D4B974B00EC743D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F938A30D1D4B974B00EC743D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F938A30E1D4B974B00EC743D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F938A30D1D4B974B00EC743D /* SASearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SASearchViewController.h; sourceTree = "<group>"; };
+		F938A30E1D4B974B00EC743D /* SASearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SASearchViewController.m; sourceTree = "<group>"; };
 		F938A3111D4B974B00EC743D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F938A3141D4B974B00EC743D /* Spotify_ObjC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Spotify_ObjC.xcdatamodel; sourceTree = "<group>"; };
 		F938A3161D4B974B00EC743D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +56,12 @@
 		F938A32B1D4B974B00EC743D /* Spotify-ObjCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Spotify-ObjCUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F938A32F1D4B974B00EC743D /* Spotify_ObjCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Spotify_ObjCUITests.m; sourceTree = "<group>"; };
 		F938A3311D4B974B00EC743D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F938A3411D4BEB8200EC743D /* SAArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAArtist.m; sourceTree = "<group>"; };
+		F938A3431D4BEF8A00EC743D /* SARequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SARequestManager.m; sourceTree = "<group>"; };
+		F938A3451D4BF6AD00EC743D /* SAResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAResponse.m; sourceTree = "<group>"; };
+		F938A3471D4BFEF600EC743D /* SAResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAResponse.h; sourceTree = "<group>"; };
+		F938A3481D4BFF2E00EC743D /* SARequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SARequestManager.h; sourceTree = "<group>"; };
+		F938A3491D4F9AF500EC743D /* SAArtist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAArtist.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,26 +112,15 @@
 		F938A3061D4B974B00EC743D /* Spotify-ObjC */ = {
 			isa = PBXGroup;
 			children = (
-				F938A30A1D4B974B00EC743D /* AppDelegate.h */,
-				F938A30B1D4B974B00EC743D /* AppDelegate.m */,
-				F938A30D1D4B974B00EC743D /* ViewController.h */,
-				F938A30E1D4B974B00EC743D /* ViewController.m */,
+				F938A3401D4BA7F100EC743D /* Networking */,
+				F938A33F1D4BA7E300EC743D /* Models */,
+				F938A33D1D4BA7C400EC743D /* Supporting Files */,
+				F938A33E1D4BA7D800EC743D /* ViewControllers */,
 				F938A3101D4B974B00EC743D /* Main.storyboard */,
 				F938A3161D4B974B00EC743D /* Assets.xcassets */,
-				F938A3181D4B974B00EC743D /* LaunchScreen.storyboard */,
-				F938A31B1D4B974B00EC743D /* Info.plist */,
 				F938A3131D4B974B00EC743D /* Spotify_ObjC.xcdatamodeld */,
-				F938A3071D4B974B00EC743D /* Supporting Files */,
 			);
 			path = "Spotify-ObjC";
-			sourceTree = "<group>";
-		};
-		F938A3071D4B974B00EC743D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				F938A3081D4B974B00EC743D /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		F938A3231D4B974B00EC743D /* Spotify-ObjCTests */ = {
@@ -141,6 +139,47 @@
 				F938A3311D4B974B00EC743D /* Info.plist */,
 			);
 			path = "Spotify-ObjCUITests";
+			sourceTree = "<group>";
+		};
+		F938A33D1D4BA7C400EC743D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F938A30A1D4B974B00EC743D /* AppDelegate.h */,
+				F938A30B1D4B974B00EC743D /* AppDelegate.m */,
+				F938A3181D4B974B00EC743D /* LaunchScreen.storyboard */,
+				F938A31B1D4B974B00EC743D /* Info.plist */,
+				F938A3081D4B974B00EC743D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F938A33E1D4BA7D800EC743D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F938A30D1D4B974B00EC743D /* SASearchViewController.h */,
+				F938A30E1D4B974B00EC743D /* SASearchViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F938A33F1D4BA7E300EC743D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F938A3491D4F9AF500EC743D /* SAArtist.h */,
+				F938A3411D4BEB8200EC743D /* SAArtist.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F938A3401D4BA7F100EC743D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F938A3481D4BFF2E00EC743D /* SARequestManager.h */,
+				F938A3431D4BEF8A00EC743D /* SARequestManager.m */,
+				F938A3471D4BFEF600EC743D /* SAResponse.h */,
+				F938A3451D4BF6AD00EC743D /* SAResponse.m */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,9 +313,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F938A3151D4B974B00EC743D /* Spotify_ObjC.xcdatamodeld in Sources */,
-				F938A30F1D4B974B00EC743D /* ViewController.m in Sources */,
+				F938A3441D4BEF8A00EC743D /* SARequestManager.m in Sources */,
+				F938A30F1D4B974B00EC743D /* SASearchViewController.m in Sources */,
 				F938A30C1D4B974B00EC743D /* AppDelegate.m in Sources */,
 				F938A3091D4B974B00EC743D /* main.m in Sources */,
+				F938A3461D4BF6AD00EC743D /* SAResponse.m in Sources */,
+				F938A3421D4BEB8200EC743D /* SAArtist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +544,7 @@
 				F938A3361D4B974B00EC743D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F938A3371D4B974B00EC743D /* Build configuration list for PBXNativeTarget "Spotify-ObjCTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +553,7 @@
 				F938A3391D4B974B00EC743D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F938A33A1D4B974B00EC743D /* Build configuration list for PBXNativeTarget "Spotify-ObjCUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +562,7 @@
 				F938A33C1D4B974B00EC743D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
