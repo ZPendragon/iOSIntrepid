@@ -19,15 +19,6 @@ static NSString * const cellIdentifier = @"searchResultCell";
 
 @implementation SASearchViewController
 
-- (void) updateFilteredArtistsWithResponse:(SAResponse *)result {
-    if (*(result.response) == Failure) {
-        NSLog(@"Error fetching artists");
-    } else {
-        NSLog(@"Success!!!");
-        // TODO: Implement callback to populate Tableview
-    }
-}
-
 - (void) viewDidLoad {
     [super viewDidLoad];
     [self setupVC];

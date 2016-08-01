@@ -11,7 +11,6 @@
 
 @interface SASearchViewController : UITableViewController <UITextFieldDelegate>
 
-- (void) updateFilteredArtistsWithResponse:(SAResponse *)result;
 - (void) setupVC;
 
 @end
