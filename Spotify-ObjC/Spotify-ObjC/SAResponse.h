@@ -9,14 +9,14 @@
 #import "SAArtist.h"
 
 typedef NS_ENUM(NSInteger, NetworkResponse) {
-    Success,
+    Success = 0,
     Failure
 };
 
 @interface SAResponse : NSObject
 
 @property (nonatomic) NetworkResponse *response;
-@property (nonatomic) NSArray *artists;
+@property (nonatomic, strong) NSMutableArray *artists;
 @property (nonatomic) NSError *error;
 
 @end

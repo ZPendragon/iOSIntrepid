@@ -11,4 +11,15 @@
 
 @implementation SAArtist
 
+- (instancetype)init {
+    self = [super init];
+    
+    if (self) {
+        _name = nil;
+        _image = nil;
+        _artistDescription = nil;
+    }
+    return self;
+}
+
 @end

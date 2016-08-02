@@ -21,16 +21,6 @@ static SARequestManager *requestManager = nil;
 
 @implementation SASearchViewController
 
-- (void) updateFilteredArtistsWithResponse:(SAResponse *)result {
-    if (*(result.response) == Failure) {
-        NSLog(@"Error fetching artists");
-    } else {
-        NSLog(@"Success!!!");
-        artists = result.artists;
-        [self.tableView reloadData];
-    }
-}
-
 - (void) viewDidLoad {
     [super viewDidLoad];
     self.textField.delegate = self;
@@ -57,10 +47,15 @@ static SARequestManager *requestManager = nil;
     if ([searchQuery isEqualToString:@""]) {
         return YES;
     } else {
-        // Run our query
-        NSLog(@"Hello");
-        NSLog(@"%p",requestManager);
-        [requestManager getArtistsWithQuery:searchQuery completion: @selector(updateFilteredArtistsWithResponse:)];
+        [requestManager getArtistsWithQuery:searchQuery completion:^(SAResponse *response) {
+            if (*(response.response) == Failure) {
+                NSLog(@"Error fetching artists");
+            } else {
+                NSLog(@"Success!!!");
+                artists = response.artists;
+                [self.tableView reloadData];
+            }
+        }];
     }
     return YES;
 }
@@ -73,7 +68,8 @@ static SARequestManager *requestManager = nil;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UITableViewCell *searchCell = [tableView dequeueReusableCellWithIdentifier: cellIdentifier];
-    SAArtist *currentArtist = artists[indexPath.row];
+    SAArtist *currentArtist = [[SAArtist alloc] init];
+    currentArtist = artists[indexPath.row];
     searchCell.textLabel.text = currentArtist.name;
     return searchCell;
 }

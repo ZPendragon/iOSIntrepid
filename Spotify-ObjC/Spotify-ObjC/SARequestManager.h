@@ -11,14 +11,12 @@
 
 typedef void (^Completion)(SAResponse *response);
 
-
 @interface SARequestManager : NSObject
 
 + (SARequestManager *) sharedInstance;
 + (id) allocWithZone:(struct _NSZone *)zone;
 - (void) singletonInit;
-//- (void) getArtistsWithQuery:(NSString *)query completion:(Completion)completion;
-- (void) getArtistsWithQuery:(NSString *)query completion:(SEL)updateArtistsWithResult;
+- (void) getArtistsWithQuery:(NSString *)query completion:(Completion)completion;
 - (NSString *) fetchImage:(NSArray *)images;
 
 @end
