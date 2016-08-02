@@ -33,7 +33,7 @@ static NSString * const cellIdentifier = @"searchResultCell";
     self.textField.backgroundColor = backgroundColor;
     self.navigationController.navigationBar.barTintColor = backgroundColor;
     self.navigationController.navigationBar.backgroundColor = backgroundColor;
-    _textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Search Spotify" attributes:@{NSForegroundColorAttributeName: placeholderTextColor}];
+    self.textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Search Spotify" attributes:@{NSForegroundColorAttributeName: placeholderTextColor}];
 }
 
 //MARK: - UITextFieldDelegate
