@@ -68,7 +68,8 @@ static SARequestManager *requestManager = nil;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UITableViewCell *searchCell = [tableView dequeueReusableCellWithIdentifier: cellIdentifier];
-    SAArtist *currentArtist = artists[indexPath.row];
+    SAArtist *currentArtist = [[SAArtist alloc] init];
+    currentArtist = artists[indexPath.row];
     searchCell.textLabel.text = currentArtist.name;
     return searchCell;
 }
