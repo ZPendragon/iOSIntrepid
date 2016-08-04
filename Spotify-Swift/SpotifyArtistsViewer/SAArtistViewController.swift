@@ -14,7 +14,6 @@ class SAArtistViewController: UIViewController {
     
     @IBOutlet weak private var artistImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
-    var url :String?
     var detailArtist: SAArtist?
     
     override func viewDidLoad() {

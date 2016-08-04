@@ -11,6 +11,6 @@
 
 @interface SASearchViewController : UITableViewController <UITextFieldDelegate>
 
-- (void) setupVC;
+- (void) configureVC;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "SASearchViewController.h"
+#import "SAArtistViewController.h"
 
 static NSString * const cellIdentifier = @"searchResultCell";
 static SARequestManager *requestManager = nil;
@@ -25,12 +26,12 @@ static SARequestManager *requestManager = nil;
     [super viewDidLoad];
     self.textField.delegate = self;
     requestManager = [SARequestManager sharedInstance];
-    [self setupVC];
+    [self configureVC];
 }
 
 // MARK: - Setup
 
-- (void)setupVC {
+- (void)configureVC {
     UIColor *backgroundColor = [UIColor blackColor];
     UIColor *placeholderTextColor = [UIColor whiteColor];
     self.view.backgroundColor = backgroundColor;
@@ -72,6 +73,24 @@ static SARequestManager *requestManager = nil;
     currentArtist = artists[indexPath.row];
     searchCell.textLabel.text = currentArtist.name;
     return searchCell;
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString: @"showDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        SAArtistViewController *destinationController = segue.destinationViewController;
+        SAArtist *currentArtist = artists[indexPath.row];
+        NSLog(@"%@",currentArtist.name);
+        NSLog(@"%@",currentArtist.image);
+        NSLog(@"%@",currentArtist.artistDescription);
+        destinationController.detailArtist = currentArtist;
+        destinationController.navigationItem.title = currentArtist.name;
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
+                                       initWithTitle: @"Search"
+                                       style: UIBarButtonItemStylePlain
+                                       target: nil action: nil];
+        [self.navigationItem setBackBarButtonItem: backButton];
+    }
 }
 
 @end

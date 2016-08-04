@@ -20,6 +20,7 @@
 		F938A3441D4BEF8A00EC743D /* SARequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F938A3431D4BEF8A00EC743D /* SARequestManager.m */; };
 		F941BE8C1D512A01006EB2B7 /* SAResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F938A3451D4BF6AD00EC743D /* SAResponse.m */; };
 		F9B48A921D4FDDF600FA150A /* SAArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = F938A3411D4BEB8200EC743D /* SAArtist.m */; };
+		F9F6E3611D5270D1006F944D /* SAArtistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F6E3601D5270D1006F944D /* SAArtistViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		F938A3481D4BFF2E00EC743D /* SARequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SARequestManager.h; sourceTree = "<group>"; };
 		F938A3491D4F9AF500EC743D /* SAArtist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAArtist.h; sourceTree = "<group>"; };
 		F941BE8D1D512AEA006EB2B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F9F6E35F1D5270D1006F944D /* SAArtistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAArtistViewController.h; sourceTree = "<group>"; };
+		F9F6E3601D5270D1006F944D /* SAArtistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAArtistViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				F938A30D1D4B974B00EC743D /* SASearchViewController.h */,
+				F9F6E35F1D5270D1006F944D /* SAArtistViewController.h */,
+				F9F6E3601D5270D1006F944D /* SAArtistViewController.m */,
 				F938A30E1D4B974B00EC743D /* SASearchViewController.m */,
 			);
 			name = ViewControllers;
@@ -320,6 +325,7 @@
 				F938A3441D4BEF8A00EC743D /* SARequestManager.m in Sources */,
 				F938A30F1D4B974B00EC743D /* SASearchViewController.m in Sources */,
 				F938A30C1D4B974B00EC743D /* AppDelegate.m in Sources */,
+				F9F6E3611D5270D1006F944D /* SAArtistViewController.m in Sources */,
 				F941BE8C1D512A01006EB2B7 /* SAResponse.m in Sources */,
 				F938A3091D4B974B00EC743D /* main.m in Sources */,
 			);
