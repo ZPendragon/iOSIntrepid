@@ -47,7 +47,6 @@ static SARequestManager *sharedInstance = nil;
                                             if (!data) {
                                                 *(result.response) = Failure;
                                                 result.error = error;
-                                                NSLog(@"Error: %@", [error localizedDescription]);
                                             } else {
                                                 *(result.response) = Success;
                                                 NSError *jsonError = nil;
@@ -63,7 +62,7 @@ static SARequestManager *sharedInstance = nil;
                                                         NSArray *images = [artistEntry objectForKey:@"images"];
                                                         SAArtist *artist = [[SAArtist alloc] init];
                                                         artist.name = [artistEntry objectForKey:@"name"];
-                                                        artist.image = [self fetchImage:images];
+                                                        artist.image = [self fetchImageURL:images];
                                                         artist.artistDescription = @"This band is awesome!";
                                                         [returnedArtists addObject: artist];
                                                     }
@@ -77,7 +76,7 @@ static SARequestManager *sharedInstance = nil;
     [task resume];
 }
 
-- (NSString *) fetchImage:(NSArray *)images {
+- (NSString *) fetchImageURL:(NSArray *)images {
     for (NSDictionary *image in images) {
         NSNumber *height = [image objectForKey:@"height"];
         NSNumber *width = [image objectForKey:@"width"];

@@ -15,9 +15,9 @@
     self = [super init];
     
     if (self) {
-        _name = nil;
-        _image = nil;
-        _artistDescription = nil;
+        self.name = nil;
+        self.image = nil;
+        self.artistDescription = nil;
     }
     return self;
 }
