@@ -47,12 +47,12 @@ static SARequestManager *requestManager = nil;
     if ([searchQuery isEqualToString:@""]) {
         return YES;
     } else {
-        [requestManager getArtistsWithQuery:searchQuery completion:^(SAResponse *response) {
-            if (!response) {
+        [requestManager getItemsWithQuery:searchQuery completion:^(SAResponse *response) {
+            if (response.response == Failure) {
                 NSLog(@"Error fetching artists");
             } else {
                 NSLog(@"Success!!!");
-                artists = response.artists;
+                artists = response.items;
                 [self.tableView reloadData];
             }
         }];
@@ -68,8 +68,7 @@ static SARequestManager *requestManager = nil;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UITableViewCell *searchCell = [tableView dequeueReusableCellWithIdentifier: cellIdentifier];
-    SAArtist *currentArtist = [[SAArtist alloc] init];
-    currentArtist = artists[indexPath.row];
+    SAArtist *currentArtist = artists[indexPath.row];
     searchCell.textLabel.text = currentArtist.name;
     return searchCell;
 }

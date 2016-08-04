@@ -15,8 +15,8 @@ typedef NS_ENUM(NSInteger, NetworkResponse) {
 
 @interface SAResponse : NSObject
 
-@property (nonatomic) NetworkResponse *response;
-@property (nonatomic, strong) NSMutableArray *artists;
+@property (nonatomic) NetworkResponse response;
+@property (nonatomic, strong) NSArray *items;
 @property (nonatomic) NSError *error;
 
 @end

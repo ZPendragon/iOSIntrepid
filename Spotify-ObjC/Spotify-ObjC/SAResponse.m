@@ -15,9 +15,9 @@
     self = [super init];
     
     if (self) {
-        _artists = nil;
-        _response = nil;
-        _error = nil;
+        self.items = nil;
+        self.response = 0;
+        self.error = nil;
     }
     return self;
 }

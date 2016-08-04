@@ -14,4 +14,6 @@
 @property (nonatomic) NSString *image;
 @property (nonatomic) NSString *artistDescription;
 
++ (NSArray *) configureWithJSON:(NSData *)responseData;
++ (NSString *) fetchImageURL:(NSArray *)images;
 @end
