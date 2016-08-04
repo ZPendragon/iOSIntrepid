@@ -48,7 +48,7 @@ static SARequestManager *requestManager = nil;
         return YES;
     } else {
         [requestManager getArtistsWithQuery:searchQuery completion:^(SAResponse *response) {
-            if (*(response.response) == Failure) {
+            if (!response) {
                 NSLog(@"Error fetching artists");
             } else {
                 NSLog(@"Success!!!");

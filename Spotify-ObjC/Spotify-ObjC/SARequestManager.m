@@ -45,10 +45,8 @@ static SARequestManager *sharedInstance = nil;
                                         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                             SAResponse *result = [[SAResponse alloc] init];
                                             if (!data) {
-                                                *(result.response) = Failure;
                                                 result.error = error;
                                             } else {
-                                                *(result.response) = Success;
                                                 NSError *jsonError = nil;
                                                 NSDictionary *jsonResult = [NSJSONSerialization JSONObjectWithData: data
                                                                                                            options: NSJSONReadingMutableContainers
