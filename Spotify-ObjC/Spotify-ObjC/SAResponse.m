@@ -7,3 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SAResponse.h"
+
+@implementation SAResponse : NSObject 
+
+- (instancetype)init {
+    self = [super init];
+    
+    if (self) {
+        self.items = nil;
+        self.response = 0;
+        self.error = nil;
+    }
+    return self;
+}
+
+@end

@@ -7,3 +7,57 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SAArtist.h"
+
+@implementation SAArtist
+
+- (instancetype)init {
+    self = [super init];
+    
+    if (self) {
+        self.name = nil;
+        self.image = nil;
+        self.artistDescription = nil;
+    }
+    return self;
+}
+
++ (NSArray *) configureWithJSON:(NSData *)responseData {
+    
+    NSError *jsonError = nil;
+    NSDictionary *jsonResult = [NSJSONSerialization JSONObjectWithData: responseData
+                                                               options: NSJSONReadingMutableContainers
+                                                                 error: &jsonError];
+    NSMutableArray *returnedArtists = [[NSMutableArray alloc] init];
+    NSArray *dataFromJSON;
+    
+    if ([jsonResult objectForKey:@"artists"]) {
+        NSDictionary *artistResponse = [jsonResult objectForKey:@"artists"];
+        NSArray *artists = [artistResponse objectForKey:@"items"];
+        for (NSDictionary *artistEntry in artists) {
+            NSArray *images = [artistEntry objectForKey:@"images"];
+            SAArtist *artist = [[SAArtist alloc] init];
+            artist.name = [artistEntry objectForKey:@"name"];
+            artist.image = [self fetchImageURL:images];
+            artist.artistDescription = @"This band is awesome!";
+            [returnedArtists addObject: artist];
+        }
+        dataFromJSON = returnedArtists;
+    }
+    return dataFromJSON;
+}
+
++ (NSString *) fetchImageURL:(NSArray *)images {
+    for (NSDictionary *image in images) {
+        NSNumber *height = [image objectForKey:@"height"];
+        NSNumber *width = [image objectForKey:@"width"];
+        
+        if (width == height) {
+            NSString *url = [image objectForKey:@"url"];
+            return url;
+        }
+    }
+    return nil;
+}
+
+@end

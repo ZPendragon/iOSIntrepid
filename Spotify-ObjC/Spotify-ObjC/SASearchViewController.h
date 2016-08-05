@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SAResponse.h"
+#import "SARequestManager.h"
 
 @interface SASearchViewController : UITableViewController <UITextFieldDelegate>
 

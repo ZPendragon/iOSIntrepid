@@ -9,9 +9,11 @@
 #import "SASearchViewController.h"
 
 static NSString * const cellIdentifier = @"searchResultCell";
+static SARequestManager *requestManager = nil;
 
-@interface SASearchViewController ()
-
+@interface SASearchViewController () {
+    NSArray *artists;
+}
 @property (weak, nonatomic) IBOutlet UISegmentedControl *searchSegmentControl;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
@@ -21,6 +23,8 @@ static NSString * const cellIdentifier = @"searchResultCell";
 
 - (void) viewDidLoad {
     [super viewDidLoad];
+    self.textField.delegate = self;
+    requestManager = [SARequestManager sharedInstance];
     [self setupVC];
 }
 
@@ -39,13 +43,19 @@ static NSString * const cellIdentifier = @"searchResultCell";
 //MARK: - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
     NSString *searchQuery = self.textField.text;
-    
     if ([searchQuery isEqualToString:@""]) {
         return YES;
     } else {
-        // Run our query
+        [requestManager getItemsWithQuery:searchQuery completion:^(SAResponse *response) {
+            if (response.response == Failure) {
+                NSLog(@"Error fetching artists");
+            } else {
+                NSLog(@"Success!!!");
+                artists = response.items;
+                [self.tableView reloadData];
+            }
+        }];
     }
     return YES;
 }
@@ -53,12 +63,13 @@ static NSString * const cellIdentifier = @"searchResultCell";
 // MARK: - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return [artists count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UITableViewCell *searchCell = [tableView dequeueReusableCellWithIdentifier: cellIdentifier];
-    searchCell.textLabel.text = @"Zedd";
+    SAArtist *currentArtist = artists[indexPath.row];
+    searchCell.textLabel.text = currentArtist.name;
     return searchCell;
 }
 

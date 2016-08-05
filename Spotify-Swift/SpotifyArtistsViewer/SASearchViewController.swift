@@ -48,9 +48,9 @@ class SASearchViewController: UITableViewController, UITextFieldDelegate {
     }
     
     override internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as cellType
-        cell?.textLabel?.text = self.artists[indexPath.row].name
-        return cell!
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+        cell.textLabel?.text = self.artists[indexPath.row].name
+        return cell
     }
     
     // MARK: - UITextFieldDelegate
